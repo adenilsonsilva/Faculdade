@@ -10,6 +10,8 @@ public class Principal {
         Integer rg;
         Date dataNascimento;
 
+        System.out.println(dateString(new Date()));
+
         System.out.println("Infome o nome do aluno: ");
         nome = teclado.next();
 
@@ -50,13 +52,13 @@ public class Principal {
         System.out.println("***** Informações professor **********");
         System.out.println("Código: " + professor.getId() + " nome: " + professor.getNome() + " RG: " + professor.getRg());
         System.out.println(" Disciplina: " + professor.getDisciplina() + " Salário: " + professor.getSalario());
-        System.out.println(" Data de Nascimento: " + professor.getDataNascimento());
+        System.out.println(" Data de Nascimento: " + dateString(professor.getDataNascimento()));
 
 
         System.out.println("***** Informações Aluno **********");
         System.out.println("Código: " + aluno.getId() + " nome: " + aluno.getNome() + " RG: " + aluno.getRg());
         System.out.println(" Matrícula: " + aluno.getMatricula());
-        System.out.println(" Data de Nascimento: " + aluno.getDataNascimento());
+        System.out.println(" Data de Nascimento: " + dateString(aluno.getDataNascimento()));
 
 
 
@@ -77,6 +79,17 @@ public class Principal {
 
     }
 
+    public static String dateString(Date data){
+        String dataRetorno = "";
+        try {
+            DateFormat dataFormatada = new SimpleDateFormat("dd/MM/yyyy");
+            dataRetorno = dataFormatada.format(data);
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
 
+        return dataRetorno;
+
+    }
 
 }
