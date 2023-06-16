@@ -16,7 +16,7 @@ public class Principal {
         System.out.println("Informe o rg do aluno: ");
         rg = teclado.nextInt();
 
-        System.out.println("Informe a data de nascimento do aluno: ");
+        System.out.println("Informe a data de nascimento do aluno: 12345  ");
         dataNascimento = formataData(teclado.next());
 
         Aluno aluno = new Aluno(1, nome, rg, dataNascimento);
